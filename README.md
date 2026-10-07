@@ -1,0 +1,19 @@
+# Pocket Foley
+
+Make a small original sound effect from a tone, noise and a click, then export exactly the samples you heard.
+
+## Run and use
+
+Run `python -m http.server 8000`, then open http://localhost:8000. There are no dependencies or build steps. Choose **Pop**, **Whoosh**, **Zap**, **Knock**, **Shimmer** or **Thud**, then **Play sound**. Adjust Length and Softness. **Save WAV** downloads a usable sound without opening deeper settings.
+
+**Shape the ingredients** contains the Tone/Noise/Click mix, starting pitch and pitch movement in semitones. The noise texture is deterministic; **New noise texture** changes only its seed. Zeroing all ingredients makes silence and playback explains how to recover. Edits stop audio, as do Stop and hiding the tab. Playback never starts on load or import.
+
+Undo restores up to 30 edits in the current session. Settings save in this browser when available; JSON download/open supplies a portable editable project. Invalid imports preserve current work. WAV output is mono, 44.1 kHz, 16-bit PCM, 0.08–2 seconds. Preview converts the exact exported integer samples to the browser audio buffer. The device may resample playback and determines actual loudness; rendering identity is not a physical sound guarantee.
+
+## Verify
+
+Run `npm test` with Node 18+. Tests cover all presets, silent endpoints, deterministic noise, all-zero silence, every serialized WAV sample and header, maximum settings, validated bounds and independent imported state. Audio quality still needs listening. There is no recording, sampler upload, MIDI, sequencing, external media import or multi-file batch export.
+
+## Originality and possible depth
+
+Original synthesis code, inspired by KO II Sampler's sample-making workflow. This is a small sound-effect instrument rather than another DAW. Future possibilities, not shipped: editable envelopes, multi-effect recipes, sample packs and stereo motion.

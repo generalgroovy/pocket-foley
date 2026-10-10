@@ -1,6 +1,6 @@
 # Pocket Foley
 
-Make a small original sound effect from a tone, noise and a click, then export exactly the samples you heard.
+Build sound effects from tone, noise and click layers. Preview and WAV export use the same samples.
 
 ## Run and use
 
